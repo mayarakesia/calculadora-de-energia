@@ -7,19 +7,23 @@ function calcular() {
   const resultado = document.getElementById("resultado");
   const dica = document.getElementById("dica");
 
-  if (isNaN(potencia) || isNaN(tempo) || isNaN(dias) || isNaN(tarifa)) {
-    resultado.innerHTML = "⚠️ Por favor, preencha todos os campos.";
+
+  if ([potencia, tempo, dias, tarifa].some(isNaN)) {
+    resultado.innerHTML = "⚠️ Por favor, preencha todos os campos corretamente.";
     dica.innerHTML = "";
     return;
   }
 
+  
   const consumoMensalKwh = (potencia * tempo * dias) / 1000;
   const custoMensal = consumoMensalKwh * tarifa;
 
+  
   resultado.innerHTML = `
     🔋 <strong>Consumo mensal:</strong> ${consumoMensalKwh.toFixed(2)} kWh<br>
-    💰 <strong>Custo estimado:</strong> R$ ${custoMensal.toFixed(2)}
+    💰 <strong>Custo estimado:</strong> R$ ${custoMensal.toFixed(2).replace('.', ',')}
   `;
+
 
   let sugestao = "";
   if (potencia > 2000) {

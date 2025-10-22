@@ -15,7 +15,7 @@ a {
   text-decoration: none;
 }
 
-/* ===== TOPO ===== */
+
 .topo {
   text-align: center;
   padding: 60px 20px 20px;
@@ -36,33 +36,37 @@ a {
   color: #ccc;
 }
 
-/* ===== CALCULADORA ===== */
+
 .calculadora {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   background: #1a1a1a;
   padding: 40px 20px;
   border-radius: 16px;
   width: 90%;
   max-width: 500px;
   margin: 0 auto 60px;
-  text-align: left;
   box-shadow: 0 0 20px rgba(180, 151, 255, 0.15);
 }
 
-.calculadora h2 {
-  text-align: center;
-  margin-bottom: 20px;
+.calc-box {
+  width: 100%;
+  max-width: 350px;
 }
 
-.calculadora label {
+.calc-box label {
   display: block;
+  text-align: left;
   margin-top: 10px;
   color: #ddd;
 }
 
-.calculadora input {
+.calc-box input {
   width: 100%;
   padding: 10px;
-  margin-top: 4px;
+  margin-top: 6px;
   border-radius: 8px;
   border: none;
   outline: none;
@@ -70,7 +74,7 @@ a {
   color: #fff;
 }
 
-.calculadora button {
+.calc-box button {
   width: 100%;
   margin-top: 20px;
   padding: 12px;
@@ -82,16 +86,18 @@ a {
   cursor: pointer;
 }
 
-.calculadora button:hover {
+.calc-box button:hover {
   background: #c8adff;
 }
 
 #resultado, #dica {
   margin-top: 15px;
   text-align: center;
+  color: #b497ff;
+  font-weight: 500;
 }
 
-/* ===== SEÇÕES ===== */
+
 .section, .bloco {
   width: 90%;
   max-width: 900px;
@@ -126,7 +132,7 @@ a {
   margin: 10px 0;
 }
 
-/* ===== CTA ===== */
+
 .cta {
   text-align: center;
   padding: 80px 20px;
@@ -147,7 +153,7 @@ a {
   background: #c8adff;
 }
 
-/* ===== RODAPÉ ===== */
+
 footer {
   text-align: center;
   padding: 40px 0;
