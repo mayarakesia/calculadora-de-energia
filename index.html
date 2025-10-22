@@ -3,28 +3,144 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculadora de Consumo Energético</title>
+  <title>Calcula Watt by Mayara | Calculadora de Consumo Energético</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <div class="container">
-  <h1>Calculadora de Consumo Energético</h1>
+  <header class="topo">
+    <h1>⚡ Calcula Watt <span>by Mayara Kesia</span></h1>
+    <p>Controle e Economia na Sua Conta de Luz</p>
+  </header>
 
-  <label>Potência do aparelho (em Watts):</label>
-  <input type="number" id="potencia" placeholder="Exemplo: 1000">
+  <main>
+    <!-- ================= CALCULADORA ================= -->
+    <section id="calculadora" class="calculadora">
+      <h2>Calculadora de Consumo Energético</h2>
 
-  <label>Tempo de uso diário (em horas):</label>
-  <input type="number" id="tempo" placeholder="Exemplo: 2">
+      <div class="calc-box">
+        <label>Potência do aparelho (W)</label>
+        <input type="number" id="potencia" placeholder="Ex: 1000">
 
-  <label>Dias de uso por mês:</label>
-  <input type="number" id="dias" placeholder="Exemplo: 30">
+        <label>Tempo de uso diário (horas)</label>
+        <input type="number" id="tempo" placeholder="Ex: 4" step="0.1">
 
-  <label>Tarifa de energia (R$/kWh):</label>
-  <input type="number" id="tarifa" step="0.01" placeholder="Exemplo: 0,90">
+        <label>Dias de uso por mês</label>
+        <input type="number" id="dias" placeholder="Ex: 30">
 
-  <button onclick="calcular()">Calcular Consumo</button>
-  <p id="resultado"></p>
-</div>
+        <label>Tarifa de energia (R$/kWh)</label>
+        <input type="number" id="tarifa" placeholder="Ex: 0.75" step="0.01">
+
+        <button onclick="calcular()">Calcular</button>
+
+        <div id="resultado"></div>
+        <div id="dica"></div>
+      </div>
+    </section>
+
+    <!-- ================= SEÇÕES ================= -->
+    <section class="bloco">
+      <h3>Por que controlar o consumo de energia em casa?</h3>
+      <div class="cards">
+        <div class="card">
+          <h4>💰 Redução de Custos</h4>
+          <p>Entender o gasto de cada aparelho ajuda a evitar desperdícios e reduzir custos mensais.</p>
+        </div>
+        <div class="card">
+          <h4>💡 Consciência Energética</h4>
+          <p>Você ganha clareza sobre onde a energia é gasta, permitindo uma gestão ativa e inteligente.</p>
+        </div>
+        <div class="card">
+          <h4>🌱 Sustentabilidade Ambiental</h4>
+          <p>Consumir energia de forma consciente reduz impactos ambientais e promove o uso sustentável dos recursos.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bloco alt">
+      <h3>Como funciona a nossa Calculadora?</h3>
+      <ol>
+        <li><strong>Dados do Aparelho:</strong> Informe potência (W), tempo diário (h) e dias de uso.</li>
+        <li><strong>Valor da Tarifa:</strong> Insira o preço do kWh da sua conta.</li>
+        <li><strong>Obtenha os Resultados:</strong> Clique em “Calcular” e veja o consumo e custo estimado.</li>
+      </ol>
+    </section>
+
+    <section class="bloco">
+      <h3>Entendendo os Dados</h3>
+      <div class="grid">
+        <div>
+          <h4>Potência (W)</h4>
+          <p>Capacidade do aparelho de consumir energia por unidade de tempo. Verifique na etiqueta ou manual do produto.</p>
+        </div>
+        <div>
+          <h4>Quilowatt-hora (kWh)</h4>
+          <p>Unidade de cobrança das concessionárias. Representa a energia consumida por 1000W em 1 hora.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bloco alt">
+      <h3>Exemplo Prático: Aspirador de Pó</h3>
+      <p>Potência: 1100W | Uso: 1h/dia | 4 dias/mês | Tarifa: R$1,80/kWh</p>
+      <p><strong>Consumo:</strong> 1100 × 1 × 4 / 1000 = <strong>4,4 kWh</strong></p>
+      <p><strong>Custo:</strong> 4,4 × 1,80 = <strong>R$7,92</strong></p>
+    </section>
+
+    <section class="bloco">
+      <h3>Lista de Potências Médias</h3>
+      <ul class="potencias">
+        <li>Geladeira comum: 100–300W</li>
+        <li>Chuveiro elétrico: 3000–7000W</li>
+        <li>TV 32" LED: 30–100W</li>
+        <li>Máquina de lavar: 400–1500W</li>
+        <li>Micro-ondas: 1200–1500W</li>
+        <li>Ventilador de mesa: 100W</li>
+        <li>Ar-condicionado: 900–1500W</li>
+        <li>Lâmpada LED: 10W</li>
+      </ul>
+    </section>
+
+    <section class="bloco alt">
+      <h3>Bandeiras Tarifárias</h3>
+      <div class="cards">
+        <div class="card verde">
+          <h4>🟩 Verde</h4>
+          <p>Tarifa normal, sem acréscimo.</p>
+        </div>
+        <div class="card amarela">
+          <h4>🟨 Amarela</h4>
+          <p>Acréscimo moderado. Use energia com cautela.</p>
+        </div>
+        <div class="card vermelha">
+          <h4>🟥 Vermelha</h4>
+          <p>Acréscimo alto. Condições críticas de geração.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bloco">
+      <h3>Dicas para Economizar Energia</h3>
+      <ul class="dicas">
+        <li>💡 Troque lâmpadas incandescentes por LEDs (até 80% mais economia).</li>
+        <li>🔌 Evite o “consumo vampiro”: desligue aparelhos da tomada.</li>
+        <li>🏷️ Prefira aparelhos com selo Procel A.</li>
+        <li>🧠 Use a calculadora para descobrir os maiores vilões do consumo.</li>
+      </ul>
+    </section>
+
+    <section class="cta">
+      <h2>Comece Agora: Transforme Sua Relação com a Energia!</h2>
+      <p>Insira seus dados na calculadora e descubra onde você pode economizar.  
+      Compartilhe esta ferramenta e multiplique o impacto positivo!</p>
+      <a href="#calculadora" class="btn-primary">Acessar a Calculadora</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>Feito com 💜 por <strong>Mayara Kesia</strong> • 2025</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>

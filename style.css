@@ -1,76 +1,159 @@
+<<<<<<< HEAD
+/* ===== ESTILO GERAL ===== */
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #f4f7fb;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  background-color: #121212;
+  color: #e8e8e8;
   margin: 0;
+  line-height: 1.6;
 }
 
-.container {
-  background: white;
-  width: 340px;
-  padding: 25px 30px; /* um pouco mais de espaço lateral */
-  border-radius: 14px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-  text-align: center; /* centraliza tudo dentro */
+h1, h2, h3, h4 {
+  color: #b497ff;
 }
 
-h1 {
-  color: #5a3fd9;
-  margin-bottom: 15px; /* aproxima mais do conteúdo */
-  font-size: 20px;
+a {
+  color: #b497ff;
+  text-decoration: none;
 }
 
-label {
-  display: block;
+/* ===== TOPO ===== */
+.topo {
+  text-align: center;
+  padding: 60px 20px 20px;
+}
+
+.topo h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.topo span {
+  font-weight: 400;
+  color: #9d8cf2;
+}
+
+.topo p {
+  font-size: 1.1rem;
+  color: #ccc;
+}
+
+/* ===== CALCULADORA ===== */
+.calculadora {
+  background: #1a1a1a;
+  padding: 40px 20px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto 60px;
   text-align: left;
-  margin-top: 8px;
-  font-weight: 500;
-  font-size: 14px;
-  color: #333;
+  box-shadow: 0 0 20px rgba(180, 151, 255, 0.15);
 }
 
-input {
+.calculadora h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.calculadora label {
+  display: block;
+  margin-top: 10px;
+  color: #ddd;
+}
+
+.calculadora input {
   width: 100%;
-  padding: 8px;
-  margin-top: 4px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-
-button {
-  background-color: #5a3fd9;
-  color: white;
-  border: none;
-  border-radius: 6px;
   padding: 10px;
+  margin-top: 4px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: #2a2a2a;
+  color: #fff;
+}
+
+.calculadora button {
   width: 100%;
-  margin-top: 15px;
+  margin-top: 20px;
+  padding: 12px;
+  background: #b497ff;
+  color: #121212;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
-  font-weight: 500;
 }
 
-button:hover {
-  background-color: #472fbd;
+.calculadora button:hover {
+  background: #c8adff;
 }
 
-#resultado {
+#resultado, #dica {
   margin-top: 15px;
-  font-weight: bold;
-  color: #333;
   text-align: center;
 }
 
-.alerta {
-  color: #b36b00;
-  background: #fff8e5;
-  border: 1px solid #ffecb3;
-  padding: 8px;
-  border-radius: 6px;
-  font-size: 14px;
-  margin-top: 10px;
+/* ===== SEÇÕES ===== */
+.section, .bloco {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 0;
+}
+
+.alt {
+  background-color: #1a1a1a;
+  border-radius: 16px;
+  padding: 60px 20px;
+}
+
+.cards {
+  display: grid;
+  gap: 20px;
+}
+
+.card {
+  background: #1f1f1f;
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 4px solid #b497ff;
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+.potencias li, .dicas li {
+  margin: 10px 0;
+}
+
+/* ===== CTA ===== */
+.cta {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(180deg, #1a1a1a, #121212);
+}
+
+.btn-primary {
   display: inline-block;
+  background: #b497ff;
+  color: #121212;
+  padding: 12px 24px;
+  border-radius: 8px;
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background: #c8adff;
+}
+
+/* ===== RODAPÉ ===== */
+footer {
+  text-align: center;
+  padding: 40px 0;
+  font-size: 0.9rem;
+  color: #aaa;
+  border-top: 1px solid #2b2b2b;
 }

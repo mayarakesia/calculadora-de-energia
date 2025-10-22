@@ -1,17 +1,34 @@
 function calcular() {
-  const potencia = parseFloat(document.getElementById('potencia').value);
-  const tempo = parseFloat(document.getElementById('tempo').value);
-  const dias = parseFloat(document.getElementById('dias').value);
-  const tarifa = parseFloat(document.getElementById('tarifa').value);
+  const potencia = parseFloat(document.getElementById("potencia").value);
+  const tempo = parseFloat(document.getElementById("tempo").value);
+  const dias = parseFloat(document.getElementById("dias").value);
+  const tarifa = parseFloat(document.getElementById("tarifa").value);
+
+  const resultado = document.getElementById("resultado");
+  const dica = document.getElementById("dica");
 
   if (isNaN(potencia) || isNaN(tempo) || isNaN(dias) || isNaN(tarifa)) {
-    document.getElementById('resultado').innerText = "Preencha todos os campos!";
+    resultado.innerHTML = "⚠️ Por favor, preencha todos os campos.";
+    dica.innerHTML = "";
     return;
   }
 
-  const consumoKwh = (potencia * tempo * dias) / 1000;
-  const custo = consumoKwh * tarifa;
+  const consumoMensalKwh = (potencia * tempo * dias) / 1000;
+  const custoMensal = consumoMensalKwh * tarifa;
 
-  document.getElementById('resultado').innerText =
-    `Consumo: ${consumoKwh.toFixed(2)} kWh\nCusto: R$ ${custo.toFixed(2)}`;
+  resultado.innerHTML = `
+    🔋 <strong>Consumo mensal:</strong> ${consumoMensalKwh.toFixed(2)} kWh<br>
+    💰 <strong>Custo estimado:</strong> R$ ${custoMensal.toFixed(2)}
+  `;
+
+  let sugestao = "";
+  if (potencia > 2000) {
+    sugestao = "⚠️ Este aparelho consome muita energia! Considere reduzir o tempo de uso ou buscar modelos mais eficientes.";
+  } else if (tempo > 5) {
+    sugestao = "💡 Tente diminuir o tempo de uso diário para reduzir sua conta.";
+  } else {
+    sugestao = "✅ Bom equilíbrio! Continue praticando o consumo consciente.";
+  }
+
+  dica.innerHTML = sugestao;
 }
